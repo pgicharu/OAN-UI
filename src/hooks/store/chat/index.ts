@@ -17,7 +17,6 @@ import { useAuthStore } from "@/hooks/store/auth";
 import type { ToastType } from "@/components/screens-component/chat-screen/components/toast";
 import { environment } from "@/lib/config/environment";
 
-/* eslint-disable no-unused-vars */
 export type ApiNotification = {
 	notification_id: string;
 	type: string;
@@ -322,7 +321,7 @@ export const useChatStore = create<ChatStore>((set, get) => ({
 		}
 
 		// Helper function to calculate distance between two coordinates using Haversine formula
-		const calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: number): number => {
+		const _calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: number): number => {
 			const R = 6371; // Radius of the Earth in kilometers
 			const dLat = (lat2 - lat1) * Math.PI / 180;
 			const dLon = (lon2 - lon1) * Math.PI / 180;
@@ -334,7 +333,7 @@ export const useChatStore = create<ChatStore>((set, get) => ({
 			return R * c; // Distance in kilometers
 		};
 
-		const dedupeByPmKisan = (rows: WeatherForecastMatch[]): WeatherForecastMatch[] => {
+		const _dedupeByPmKisan = (rows: WeatherForecastMatch[]): WeatherForecastMatch[] => {
 			const seen = new Set<number>();
 			const out: WeatherForecastMatch[] = [];
 			for (const x of rows) {
@@ -346,14 +345,16 @@ export const useChatStore = create<ChatStore>((set, get) => ({
 		};
 
 		/** PostGIS ST_DWithin-style: only points inside this radius count as “local”. */
-		const WITHIN_RADIUS_KM = 75;
-		const MAX_LOCAL_MATCHES = 10;
+		const _WITHIN_RADIUS_KM = 75;
+		const _MAX_LOCAL_MATCHES = 10;
 		/** When no rows fall inside WITHIN_RADIUS_KM (e.g. user south of dataset min lat ~17.2°N), return this many nearest rows (KNN). */
-		const FALLBACK_NEAREST_K = 8;
+		const _FALLBACK_NEAREST_K = 8;
 
 		// TODO: remove hardcoded test coordinates and restore geolocation
-		const latitude = 31.319416;
-		const longitude = 76.616630;
+		// Nairobi. Was 31.319416, 76.616630 (Punjab, India) — these are sent to
+		// the notifications API as lat/lon, so the stub has to be local.
+		const latitude = -1.286389;
+		const longitude = 36.817223;
 		console.log("=== User Location (TEST HARDCODED) ===");
 		console.log("Latitude:", latitude);
 		console.log("Longitude:", longitude);
