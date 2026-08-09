@@ -41,8 +41,7 @@ function PrivacyPolicy() {
 									Privacy Policy
 								</h2>
 								<p className="mb-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-									The Ministry of Agriculture and Farmer Welfare, Govt. of India (MOA&FW) built the
-									Bharat-VISTAAR app as a Free app. This SERVICE is provided by MOA&FW at no cost
+									OAN built the OAN app as a Free app. This SERVICE is provided by OAN at no cost
 									and is intended for use as is.
 								</p>
 								<p className="mb-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
@@ -91,15 +90,15 @@ function PrivacyPolicy() {
 								</li>
 								<li className="flex items-start gap-2">
 									<span className="mt-1 text-[#00a651]">•</span>
-									<span>Caste</span>
+									<span>County and sub-county</span>
 								</li>
 								<li className="flex items-start gap-2">
 									<span className="mt-1 text-[#00a651]">•</span>
-									<span>Email ID</span>
+									<span>Email address</span>
 								</li>
 								<li className="flex items-start gap-2">
 									<span className="mt-1 text-[#00a651]">•</span>
-									<span>Farmer's farming details like plot area, plot's geo-location</span>
+									<span>Farmer's farming details like farm size, farm's geo-location</span>
 								</li>
 								<li className="flex items-start gap-2">
 									<span className="mt-1 text-[#00a651]">•</span>
@@ -288,8 +287,8 @@ function PrivacyPolicy() {
 							</p>
 							<div className="rounded-xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-800 dark:bg-gray-900">
 								<p className="mb-1 text-sm font-medium text-gray-900 dark:text-gray-100">Email</p>
-								<a href="mailto:us-it@gov.in" className="text-sm text-[#00a651] hover:underline">
-									us-it@gov.in
+								<a href="mailto:support@oan.safic.org" className="text-sm text-[#00a651] hover:underline">
+									support@oan.safic.org
 								</a>
 							</div>
 						</div>
