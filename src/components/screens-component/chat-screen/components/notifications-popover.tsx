@@ -5,6 +5,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { useChatStore, type ApiNotification, SEEN_NOTIFICATIONS_KEY } from "@/hooks/store/chat";
 import { cn } from "@/lib/utils/index";
+import { useLanguage } from "@/components/LanguageProvider";
 
 const bellIcon = "/assets/bell.svg";
 
@@ -22,6 +23,7 @@ function getSeenIds(): Set<string> {
 }
 
 export function NotificationsPopover() {
+	const { t } = useLanguage();
 	const notifications = useChatStore((s) => s.notifications);
 	const markNotificationRead = useChatStore((s) => s.markNotificationRead);
 
@@ -80,7 +82,7 @@ export function NotificationsPopover() {
 					{showTooltip && (
 						<div className="absolute top-full right-0 mt-3 z-[70] pointer-events-none select-none animate-[float_3s_ease-in-out_infinite]">
 							<div className="relative w-[160px] rounded-lg bg-[var(--secondary)] px-3 py-2 text-sm font-medium text-[var(--primary)] shadow-sm">
-								Tap here to see your latest notifications
+								{t("notifications.tapHint") as string}
 								<div className="absolute -top-1.5 right-4 h-3 w-3 rotate-45 bg-[var(--secondary)]" aria-hidden />
 							</div>
 						</div>
@@ -91,7 +93,7 @@ export function NotificationsPopover() {
 							variant="ghost"
 							size="icon"
 							className="h-11 w-11 text-muted-foreground cursor-pointer hover:bg-[var(--secondary)] relative"
-							aria-label="Notifications"
+							aria-label={t("notifications.title") as string}
 						>
 							<img src={bellIcon} alt="" className="h-8 w-8" aria-hidden />
 							{unreadCount > 0 && (
@@ -115,7 +117,7 @@ export function NotificationsPopover() {
 					<div className="flex items-center gap-2 border-b border-gray-200 px-3 py-2 dark:border-[var(--border-dark)]">
 						<img src={bellIcon} alt="" className="h-4 w-4 shrink-0" aria-hidden />
 						<h2 className="text-sm font-bold text-gray-900 dark:text-[var(--headerText-dark)]">
-							Notifications
+							{t("notifications.title") as string}
 						</h2>
 						{unreadCount > 0 && (
 							<span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-[9px] font-bold leading-none text-white">
@@ -168,8 +170,8 @@ export function NotificationsPopover() {
 													</p>
 													{/* Seen indicator */}
 													{read
-														? <CheckCheck className="h-3 w-3 shrink-0 text-gray-300 dark:text-gray-600" aria-label="Seen" />
-														: <span className="mt-0.5 h-2 w-2 shrink-0 rounded-full bg-[var(--primary)]" aria-label="Unread" />
+														? <CheckCheck className="h-3 w-3 shrink-0 text-gray-300 dark:text-gray-600" aria-label={t("notifications.ariaSeen") as string} />
+														: <span className="mt-0.5 h-2 w-2 shrink-0 rounded-full bg-[var(--primary)]" aria-label={t("notifications.ariaUnread") as string} />
 													}
 												</div>
 												<p className={cn(
@@ -181,8 +183,8 @@ export function NotificationsPopover() {
 												{n.location && n.location.distance_km != null && (
 													<p className="mt-0.5 text-[9px] text-gray-400 dark:text-gray-500">
 														{n.location.distance_km === 0
-															? "Your area"
-															: `~${n.location.distance_km.toFixed(1)} km away`}
+															? (t("notifications.yourArea") as string)
+															: (t("notifications.kmAway", { km: n.location.distance_km.toFixed(1) }) as string)}
 													</p>
 												)}
 											</div>
@@ -196,19 +198,19 @@ export function NotificationsPopover() {
 								{localStorage.getItem("user_location") ? (
 									<>
 										<p className="mt-2 text-xs font-semibold text-gray-500 dark:text-gray-400">
-											No notifications available
+											{t("notifications.emptyTitle") as string}
 										</p>
 										<p className="mt-1 px-2 text-[10px] leading-snug text-gray-400 dark:text-gray-500">
-											You're all caught up. Check back later for updates.
+											{t("notifications.emptyBody") as string}
 										</p>
 									</>
 								) : (
 									<>
 										<p className="mt-2 text-xs font-semibold text-gray-500 dark:text-gray-400">
-											No weather notifications yet
+											{t("notifications.noWeatherTitle") as string}
 										</p>
 										<p className="mt-1 px-2 text-[10px] leading-snug text-gray-400 dark:text-gray-500">
-											Allow location access to load weather alerts for your area.
+											{t("notifications.noWeatherBody") as string}
 										</p>
 									</>
 								)}
@@ -225,7 +227,7 @@ export function NotificationsPopover() {
 								onClick={markAllRead}
 							>
 								<CheckCheck className="mr-1.5 h-3 w-3" />
-								Mark all as read
+								{t("notifications.markAllRead") as string}
 							</Button>
 						</div>
 					)}
@@ -275,7 +277,7 @@ export function NotificationsPopover() {
 										size="icon"
 										className="h-9 w-9 shrink-0 rounded-full text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
 										onClick={() => setDetailOpen(false)}
-										aria-label="Close"
+										aria-label={t("notifications.ariaClose") as string}
 									>
 										<X className="h-5 w-5" />
 									</Button>
@@ -311,7 +313,7 @@ export function NotificationsPopover() {
 											{noteItems.length > 0 && (
 												<div className="rounded-xl bg-amber-50 px-4 py-3 ring-1 ring-amber-100 dark:bg-amber-950/30 dark:ring-amber-900/40">
 													<p className="mb-2 text-[10px] font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-400">
-														Please note
+														{t("notifications.pleaseNote") as string}
 													</p>
 													<div className="space-y-2">
 														{noteItems.map((note, i) => (
@@ -336,33 +338,33 @@ export function NotificationsPopover() {
 										</span>
 										<p className="text-sm font-medium text-gray-500 dark:text-gray-400">
 											{feedbackMap[selected.notification_id] === "liked"
-												? "Thanks for your feedback!"
-												: "Thanks, we'll improve!"}
+												? (t("notifications.feedbackThanksPositive") as string)
+												: (t("notifications.feedbackThanksNegative") as string)}
 										</p>
 									</div>
 								) : (
 									<div className="flex items-center justify-between gap-4">
 										<p className="text-sm font-semibold text-gray-600 dark:text-gray-300">
-											Was this helpful?
+											{t("notifications.wasThisHelpful") as string}
 										</p>
 										<div className="flex items-center gap-2">
 											<button
 												type="button"
 												onClick={() => setFeedbackMap((p) => ({ ...p, [selected.notification_id]: "liked" }))}
 												className="flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-gray-500 shadow-sm transition-all hover:border-green-400 hover:bg-green-50 hover:text-green-600 hover:shadow-none active:scale-95 dark:border-gray-700 dark:bg-gray-900 dark:hover:border-green-700 dark:hover:bg-green-950/50 dark:hover:text-green-400"
-												aria-label="Helpful"
+												aria-label={t("notifications.ariaHelpful") as string}
 											>
 												<ThumbsUp className="h-3.5 w-3.5" />
-												Yes
+												{t("notifications.yes") as string}
 											</button>
 											<button
 												type="button"
 												onClick={() => setFeedbackMap((p) => ({ ...p, [selected.notification_id]: "disliked" }))}
 												className="flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-gray-500 shadow-sm transition-all hover:border-red-400 hover:bg-red-50 hover:text-red-500 hover:shadow-none active:scale-95 dark:border-gray-700 dark:bg-gray-900 dark:hover:border-red-700 dark:hover:bg-red-950/50 dark:hover:text-red-400"
-												aria-label="Not helpful"
+												aria-label={t("notifications.ariaNotHelpful") as string}
 											>
 												<ThumbsDown className="h-3.5 w-3.5" />
-												No
+												{t("notifications.no") as string}
 											</button>
 										</div>
 									</div>

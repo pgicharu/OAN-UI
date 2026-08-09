@@ -28,7 +28,7 @@ export function PhoneField({ field, control, errors }: FieldProps) {
                 hasError ? 'phone-input-error' : '',
                 field.inputClass ?? ''
               )}
-              defaultCountry={field.phone?.defaultCountry || 'IN'}
+              defaultCountry={field.phone?.defaultCountry || 'KE'}
               {...(rest as any)}
             />
 

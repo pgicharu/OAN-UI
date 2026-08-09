@@ -10,40 +10,40 @@
   "disclaimerText": "AI-generated content. Please verify locally if required.",
   "questions": [
     {
-      "key": "schemes.info.pm_kisan",
-      "text": "What is PM-KISAN scheme and how can I apply for it?"
+      "key": "schemes.info.fertiliser_subsidy",
+      "text": "What is the government fertiliser subsidy programme and how do I register?"
     },
     {
-      "key": "schemes.info.kisan_credit_card",
-      "text": "Tell me about Kisan Credit Card scheme"
+      "key": "schemes.info.kiamis",
+      "text": "Tell me about KIAMIS and how to register my farm on it"
     },
     {
-      "key": "schemes.info.fasal_bima",
-      "text": "I want to know about Pradhan Mantri Fasal Bima Yojana"
+      "key": "schemes.info.crop_insurance",
+      "text": "I want to know about the Kenya Agricultural Insurance Programme"
     },
     {
-      "key": "schemes.benefits.soil_health_card",
-      "text": "What are the benefits of Soil Health Card scheme?"
+      "key": "schemes.benefits.soil_testing",
+      "text": "What are the benefits of having my soil tested by KALRO?"
     },
     {
-      "key": "schemes.info.pmksy",
-      "text": "Can you explain PMKSY scheme to me?"
+      "key": "schemes.info.nafis",
+      "text": "Can you explain what farming information NAFIS provides?"
     },
     {
       "key": "schemes.general.available",
-      "text": "What government schemes are available for farmers?"
+      "text": "What government support programmes are available for farmers?"
     },
     {
-      "key": "schemes.info.seed_authentication",
-      "text": "I need information about seed authentication scheme"
+      "key": "schemes.info.seed_certification",
+      "text": "I need information about KEPHIS certified seed"
     },
     {
       "key": "schemes.info.agriculture_fund",
-      "text": "Tell me about the Agriculture Infrastructure Fund"
+      "text": "Tell me about the Agricultural Finance Corporation"
     },
     {
       "key": "soil.health.check_online",
-      "text": "How can I check my soil health card online?"
+      "text": "How can I get a soil test done for my farm?"
     },
     {
       "key": "soil.health.test_report_meaning",
@@ -51,107 +51,107 @@
     },
     {
       "key": "soil.health.suitable_crops",
-      "text": "Which crops are suitable for my soil based on my Soil Health Card?"
+      "text": "Which crops are suitable for my soil based on my soil test results?"
     },
     {
       "key": "loan.credit.failed_crop",
-      "text": "Can I get a loan if my previous crop failed and I couldn't repay?"
+      "text": "Can I get a loan if my last harvest failed and I couldn't repay?"
     },
     {
       "key": "loan.credit.default_impact",
-      "text": "Will defaulting on a loan affect my eligibility for government schemes?"
+      "text": "Will defaulting on a loan affect my eligibility for government programmes?"
     },
     {
-      "key": "loan.credit.kcc_documents",
-      "text": "What documents do I need to apply for Kisan Credit Card?"
+      "key": "loan.credit.afc_documents",
+      "text": "What documents do I need to apply for an AFC Kilimo Biashara loan?"
     },
     {
       "key": "schemes.insurance.coverage",
-      "text": "How much insurance coverage will I get for my wheat crop in Punjab?"
+      "text": "How much insurance cover will I get for my maize crop in Trans Nzoia?"
     },
     {
-      "key": "mandi.price.today",
-      "text": "What is today's mandi price for [crop] in [district]?",
+      "key": "market.price.today",
+      "text": "What is today's market price for [crop] in [county]?",
       "vars": [
         "crop",
-        "district"
+        "county"
       ]
     },
     {
-      "key": "mandi.price.nearest",
-      "text": "What are the latest rates for [crop] in [district] mandi?",
+      "key": "market.price.nearest",
+      "text": "What are the latest rates for [crop] at [county] market?",
       "vars": [
         "crop",
-        "district"
+        "county"
       ]
     },
     {
-      "key": "mandi.price.crop",
-      "text": "What is the current market price of [crop] in [district] mandi?",
+      "key": "market.price.crop",
+      "text": "What is the current market price of [crop] in [county]?",
       "vars": [
         "crop",
-        "district"
+        "county"
       ]
     },
     {
       "key": "weather.forecast.today",
-      "text": "What is today's weather forecast for [district]?",
+      "text": "What is today's weather forecast for [county]?",
       "vars": [
-        "district"
+        "county"
       ]
     },
     {
       "key": "weather.forecast.week",
-      "text": "Will it rain this week in [district]?",
+      "text": "Will it rain this week in [county]?",
       "vars": [
-        "district"
+        "county"
       ]
     }
   ],
   "variables": {
     "crop": [
-      "wheat",
-      "rice",
       "maize",
-      "soybean",
-      "cotton",
+      "beans",
+      "potatoes",
+      "tea",
+      "coffee",
       "sugarcane",
-      "mustard",
-      "groundnut",
-      "onion",
-      "potato",
-      "tomato",
-      "chilli",
-      "gram",
+      "wheat",
       "sorghum",
-      "pearl millet",
-      "turmeric",
-      "garlic",
-      "banana",
+      "green grams",
+      "cowpeas",
+      "kale",
+      "cabbage",
+      "tomatoes",
+      "onions",
+      "avocado",
       "mango",
-      "orange"
+      "banana",
+      "french beans",
+      "macadamia",
+      "groundnuts"
     ],
-    "district": [
-      "Azadpur, Delhi",
-      "Lucknow",
-      "Indore",
-      "Jaipur",
-      "Patna",
-      "Bhopal",
-      "Nagpur",
-      "Pune",
-      "Hyderabad",
-      "Ahmedabad",
-      "Ludhiana",
-      "Kanpur",
-      "Varanasi",
-      "Raipur",
-      "Ranchi",
-      "Kolkata",
-      "Chennai",
-      "Bengaluru",
-      "Nashik",
-      "Amritsar"
+    "county": [
+      "Nairobi",
+      "Nakuru",
+      "Uasin Gishu",
+      "Trans Nzoia",
+      "Kiambu",
+      "Meru",
+      "Kakamega",
+      "Machakos",
+      "Bungoma",
+      "Narok",
+      "Kisii",
+      "Nyeri",
+      "Embu",
+      "Kericho",
+      "Bomet",
+      "Murang'a",
+      "Nandi",
+      "Laikipia",
+      "Kilifi",
+      "Busia"
     ]
   },
   "recordingListening": "[botName] is listening, start speaking",
@@ -229,12 +229,12 @@
     },
     "rateLimitError": {
       "title": "Please Wait",
-      "description": "Dear user, you have reached the allotted question limit for today. You may continue to explore the other features of the Bharat-VISTAAR app."
+      "description": "Dear user, you have reached the allotted question limit for today. You may continue to explore the other features of the OAN app."
     }
   },
   "maintenance": {
     "title": "Under Maintenance",
-    "heading": "Bharat-VISTAAR",
+    "heading": "OAN",
     "subheading": "Under Maintenance",
     "message": "We're currently performing scheduled maintenance to improve your experience. We'll be back shortly.",
     "thankyou": "Thank you for your patience!",
@@ -253,7 +253,7 @@
     "darkMode": "Dark mode",
     "helpAndSupport": "Help & Support",
     "faq": "Frequently Asked Questions (FAQs)",
-    "poweredBy": "Powered by Bharat-VISTAAR"
+    "poweredBy": "Powered by OAN"
   },
   "feedback": {
     "title": "Provide Feedback",
@@ -270,7 +270,7 @@
       "other": "Other issue"
     }
   },
-  "limitMessage": "Dear user, you have reached the allotted question limit for today. You may continue to explore the other features of the Bharat-VISTAAR app.",
+  "limitMessage": "Dear user, you have reached the allotted question limit for today. You may continue to explore the other features of the OAN app.",
   "chatErrorMessage": "Sorry, there was an error processing your request. Please try again.",
   "auth": {
     "loginRequired": "Login required",
@@ -293,6 +293,28 @@
     "invalidFormat": "Invalid image format. Use JPEG or PNG.",
     "imageFormatHint": "Only JPEG and PNG images are supported. The image will be optimized before upload.",
     "processingFailed": "Could not process the image. Please try another photo."
+  },
+  "notifications": {
+    "tapHint": "Tap here to see your latest notifications",
+    "title": "Notifications",
+    "yourArea": "Your area",
+    "kmAway": "~[km] km away",
+    "emptyTitle": "No notifications available",
+    "emptyBody": "You're all caught up. Check back later for updates.",
+    "noWeatherTitle": "No weather notifications yet",
+    "noWeatherBody": "Allow location access to load weather alerts for your area.",
+    "markAllRead": "Mark all as read",
+    "pleaseNote": "Please note",
+    "feedbackThanksPositive": "Thanks for your feedback!",
+    "feedbackThanksNegative": "Thanks, we'll improve!",
+    "wasThisHelpful": "Was this helpful?",
+    "yes": "Yes",
+    "no": "No",
+    "ariaSeen": "Seen",
+    "ariaUnread": "Unread",
+    "ariaClose": "Close",
+    "ariaHelpful": "Helpful",
+    "ariaNotHelpful": "Not helpful"
   },
   "pestApi": {
     "trigger": "Pest & Disease Detection",

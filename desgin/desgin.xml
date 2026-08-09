@@ -43,7 +43,7 @@
       <component id="location-string" type="data" color="gray">
         <label>Location string</label>
         <description>Raw location text extracted from file</description>
-        <example>Nashik, Maharashtra</example>
+        <example>Nakuru, Kenya</example>
         <outputs-to ref="nominatim-api"/>
       </component>
 

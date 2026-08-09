@@ -1,0 +1,329 @@
+{
+  "welcome": "Habari! Mimi ni msaidizi wako wa kilimo. Nikusaidie vipi leo?",
+  "inputPlaceholder": "Uliza swali lako...",
+  "chatMicHint": "Gusa kitufe cha maikrofoni ili kuuliza swali lako",
+  "startRecording": "Anza kurekodi",
+  "stopRecording": "Simamisha kurekodi",
+  "send": "Tuma ujumbe",
+  "Listen": "Sikiliza",
+  "selectLanguage": "Chagua lugha",
+  "disclaimerText": "Maudhui yaliyotengenezwa na AI. Tafadhali thibitisha kwa wataalamu wa eneo lako inapohitajika.",
+  "questions": [
+    {
+      "key": "schemes.info.fertiliser_subsidy",
+      "text": "Mpango wa serikali wa ruzuku ya mbolea ni upi na ninajisajili vipi?"
+    },
+    {
+      "key": "schemes.info.kiamis",
+      "text": "Nieleze kuhusu KIAMIS na jinsi ya kusajili shamba langu"
+    },
+    {
+      "key": "schemes.info.crop_insurance",
+      "text": "Nataka kujua kuhusu Mpango wa Bima ya Kilimo Kenya"
+    },
+    {
+      "key": "schemes.benefits.soil_testing",
+      "text": "Kuna faida gani kupima udongo wangu na KALRO?"
+    },
+    {
+      "key": "schemes.info.nafis",
+      "text": "Unaweza kunieleza NAFIS inatoa taarifa gani za kilimo?"
+    },
+    {
+      "key": "schemes.general.available",
+      "text": "Ni mipango gani ya serikali inayopatikana kwa wakulima?"
+    },
+    {
+      "key": "schemes.info.seed_certification",
+      "text": "Nahitaji taarifa kuhusu mbegu zilizoidhinishwa na KEPHIS"
+    },
+    {
+      "key": "schemes.info.agriculture_fund",
+      "text": "Nieleze kuhusu Shirika la Fedha za Kilimo (AFC)"
+    },
+    {
+      "key": "soil.health.check_online",
+      "text": "Ninawezaje kupima udongo wa shamba langu?"
+    },
+    {
+      "key": "soil.health.test_report_meaning",
+      "text": "Ripoti yangu ya upimaji wa udongo inamaanisha nini?"
+    },
+    {
+      "key": "soil.health.suitable_crops",
+      "text": "Ni mazao gani yanafaa kwa udongo wangu kulingana na matokeo ya upimaji?"
+    },
+    {
+      "key": "loan.credit.failed_crop",
+      "text": "Naweza kupata mkopo ikiwa mavuno yangu ya mwisho yaliharibika na sikuweza kulipa?"
+    },
+    {
+      "key": "loan.credit.default_impact",
+      "text": "Je, kushindwa kulipa mkopo kutaathiri kustahili kwangu katika mipango ya serikali?"
+    },
+    {
+      "key": "loan.credit.afc_documents",
+      "text": "Nahitaji hati gani kuomba mkopo wa AFC Kilimo Biashara?"
+    },
+    {
+      "key": "schemes.insurance.coverage",
+      "text": "Nitapata bima ya kiasi gani kwa zao langu la mahindi Trans Nzoia?"
+    },
+    {
+      "key": "market.price.today",
+      "text": "Bei ya sokoni ya leo ya [crop] katika [county] ni ngapi?",
+      "vars": [
+        "crop",
+        "county"
+      ]
+    },
+    {
+      "key": "market.price.nearest",
+      "text": "Bei za hivi karibuni za [crop] katika soko la [county] ni zipi?",
+      "vars": [
+        "crop",
+        "county"
+      ]
+    },
+    {
+      "key": "market.price.crop",
+      "text": "Bei ya sasa ya sokoni ya [crop] katika [county] ni ngapi?",
+      "vars": [
+        "crop",
+        "county"
+      ]
+    },
+    {
+      "key": "weather.forecast.today",
+      "text": "Utabiri wa hali ya hewa wa leo kwa [county] ni upi?",
+      "vars": [
+        "county"
+      ]
+    },
+    {
+      "key": "weather.forecast.week",
+      "text": "Je, mvua itanyesha wiki hii katika [county]?",
+      "vars": [
+        "county"
+      ]
+    }
+  ],
+  "variables": {
+    "crop": [
+      "mahindi",
+      "maharagwe",
+      "viazi",
+      "majani chai",
+      "kahawa",
+      "miwa",
+      "ngano",
+      "mtama",
+      "ndengu",
+      "kunde",
+      "sukuma wiki",
+      "kabichi",
+      "nyanya",
+      "vitunguu",
+      "parachichi",
+      "maembe",
+      "ndizi",
+      "mishiri",
+      "makadamia",
+      "njugu"
+    ],
+    "county": [
+      "Nairobi",
+      "Nakuru",
+      "Uasin Gishu",
+      "Trans Nzoia",
+      "Kiambu",
+      "Meru",
+      "Kakamega",
+      "Machakos",
+      "Bungoma",
+      "Narok",
+      "Kisii",
+      "Nyeri",
+      "Embu",
+      "Kericho",
+      "Bomet",
+      "Murang'a",
+      "Nandi",
+      "Laikipia",
+      "Kilifi",
+      "Busia"
+    ]
+  },
+  "recordingListening": "[botName] anasikiliza, anza kuongea",
+  "capabilities": [
+    "Majibu yanategemea nyaraka rasmi za vyuo vikuu na miongozo ya mazao pekee.",
+    "Unaweza kuuliza kuhusu mbinu za kilimo, kudhibiti wadudu na magonjwa, ratiba za mbolea, na njia za kuvuna.",
+    "Mfumo unaweza kutoa ushauri wa jumla wa kilimo lakini si majibu ya kibinafsi."
+  ],
+  "limitations": [
+    "Majibu yanategemea mbinu bora zilizoandikwa—si data ya moja kwa moja ya hali ya hewa, udongo, au soko.",
+    "Mapendekezo mahususi kwa eneo au shamba lako hayapatikani kwa sasa.",
+    "Rejelea nyaraka rasmi za miongozo zilizoorodheshwa katika programu kwa marejeleo."
+  ],
+  "feedbackOptions": [
+    "Taarifa si sahihi",
+    "Jibu halisaidii",
+    "Jibu halihusiani na swali langu",
+    "Lugha au msemo haufai",
+    "Tatizo lingine"
+  ],
+  "feedbackTitle": "Toa Maoni",
+  "feedbackDescription": "Tunasikitika jibu hilo halikusaidia. Tafadhali tujulishe kilichokosewa ili tuboreshe.",
+  "feedbackSubmit": "Tuma Maoni",
+  "feedbackCancel": "Ghairi",
+  "feedbackPlaceholder": "Au tuambie zaidi kuhusu tatizo...",
+  "appTitle": "Msaada wa AI",
+  "settings": "Mipangilio",
+  "copyMessage": "Nakili ujumbe",
+  "likeMessage": "Penda ujumbe",
+  "dislikeMessage": "Usipende ujumbe",
+  "theme": "Mandhari",
+  "askYourQuestion": "Uliza Msaidizi Wako wa Shamba",
+  "toast": {
+    "locationPermissionDenied": {
+      "title": "Ruhusa ya Mahali Imekataliwa",
+      "description": "Ufikiaji wa mahali umekataliwa. Huduma zinazohusu hali ya hewa hazitapatikana."
+    },
+    "locationUnavailable": {
+      "title": "Mahali Hapapatikani",
+      "description": "Ufikiaji wa mahali haupatikani. Huduma zinazohusu hali ya hewa hazitapatikana."
+    },
+    "locationTimeout": {
+      "title": "Muda wa Kutafuta Mahali Umeisha",
+      "description": "Ombi la kupata mahali ulipo limechukua muda mrefu. Tafadhali jaribu tena."
+    },
+    "locationError": {
+      "title": "Hitilafu ya Mahali",
+      "description": "Hitilafu ya mahali. Huduma zinazohusu hali ya hewa hazitapatikana."
+    },
+    "locationNotSupported": {
+      "title": "Mahali Hakutambuliki",
+      "description": "Kivinjari chako hakitumii huduma ya kutambua mahali. Huduma zinazohusu hali ya hewa hazitapatikana."
+    },
+    "feedbackThankYou": {
+      "title": "Asante kwa maoni yako! Tunafurahi jibu hili lilisaidia.",
+      "description": "Tutatumia maoni yako kuboresha majibu yetu."
+    },
+    "feedbackSubmitted": {
+      "title": "Asante kwa maoni yako. Tutayatumia kuboresha majibu yetu.",
+      "description": "Tutatumia maoni yako kuboresha majibu yetu."
+    },
+    "messageCopied": {
+      "title": "Ujumbe Umenakiliwa",
+      "description": "Ujumbe umenakiliwa kwenye ubao wako wa kunakili"
+    },
+    "errorPlayingAudio": {
+      "title": "Hitilafu Kucheza Sauti",
+      "description": "Kumetokea hitilafu wakati wa kucheza sauti. Tafadhali jaribu tena."
+    },
+    "apiError": {
+      "description": "Samahani, kumetokea hitilafu wakati wa kushughulikia ombi lako. Tafadhali jaribu tena."
+    },
+    "apiEmptyResponse": {
+      "description": "Samahani, sikuweza kushughulikia ombi lako kwa sasa."
+    },
+    "rateLimitError": {
+      "title": "Tafadhali Subiri",
+      "description": "Mtumiaji mpendwa, umefikia kikomo cha maswali ulichopangiwa kwa leo. Unaweza kuendelea kuchunguza huduma nyingine za programu ya OAN."
+    }
+  },
+  "maintenance": {
+    "title": "Inafanyiwa Matengenezo",
+    "heading": "OAN",
+    "subheading": "Inafanyiwa Matengenezo",
+    "message": "Kwa sasa tunafanya matengenezo yaliyopangwa ili kuboresha huduma yako. Tutarudi hivi punde.",
+    "thankyou": "Asante kwa uvumilivu wako!",
+    "estimatedTime": "Muda unaokadiriwa: saa 2-3",
+    "contact": "Kwa maswali ya haraka, tafadhali wasiliana na huduma kwa wateja."
+  },
+  "aiLoaderMessages": [
+    "Naelewa swali lako...",
+    "Natafuta taarifa sahihi...",
+    "Naandaa jibu..."
+  ],
+  "settingsPage": {
+    "title": "Mipangilio",
+    "appearance": "Muonekano",
+    "lightMode": "Hali ya mwanga",
+    "darkMode": "Hali ya giza",
+    "helpAndSupport": "Msaada na Usaidizi",
+    "faq": "Maswali Yanayoulizwa Mara kwa Mara (FAQs)",
+    "poweredBy": "Inaendeshwa na OAN"
+  },
+  "feedback": {
+    "title": "Toa Maoni",
+    "description": "Tunasikitika jibu hilo halikusaidia. Tafadhali tujulishe kilichokosewa ili tuboreshe.",
+    "placeholder": "Au tuambie zaidi kuhusu tatizo...",
+    "messageLabel": "Ujumbe",
+    "cancel": "Ghairi",
+    "submit": "Tuma Maoni",
+    "reasons": {
+      "incorrect": "Taarifa si sahihi",
+      "not_helpful": "Jibu halisaidii",
+      "irrelevant": "Jibu halihusiani na swali langu",
+      "inappropriate": "Lugha au msemo haufai",
+      "other": "Tatizo lingine"
+    }
+  },
+  "limitMessage": "Mtumiaji mpendwa, umefikia kikomo cha maswali ulichopangiwa kwa leo. Unaweza kuendelea kuchunguza huduma nyingine za programu ya OAN.",
+  "chatErrorMessage": "Samahani, kumetokea hitilafu wakati wa kushughulikia ombi lako. Tafadhali jaribu tena.",
+  "auth": {
+    "loginRequired": "Uingiaji unahitajika",
+    "loginPrompt": "Tafadhali ingia ili kuendelea na kufikia ukurasa huu."
+  },
+  "locationPermission": {
+    "title": "Tafadhali Ruhusu Ufikiaji wa Mahali",
+    "subtitle": "Je, ungependa kupokea taarifa za kilimo kwa eneo lako? Ikiwa ndiyo, tafadhali shiriki mahali ulipo ili tuweze kukutumia taarifa muhimu, kama vile:",
+    "benefit1": "Msimu wa mvua za kuendelea unaweza kuanza lini",
+    "benefit2": "Taarifa nyingine za hali ya hewa za kusaidia shughuli zako za kilimo",
+    "benefit3": "Ushauri wa kilimo kwa mazao mahususi",
+    "allowBtn": "Ruhusu Ufikiaji wa Mahali",
+    "skipBtn": "Si sasa"
+  },
+  "imageUpload": {
+    "captureImage": "Piga Picha",
+    "selectFromGallery": "Chagua kutoka Ghala",
+    "analyzingImage": "Nachambua picha ya zao lako...",
+    "imageTooLarge": "Picha ni kubwa mno. Kikomo ni MB 10.",
+    "invalidFormat": "Muundo wa picha si sahihi. Tumia JPEG au PNG.",
+    "imageFormatHint": "Picha za JPEG na PNG pekee ndizo zinazokubalika. Picha itaboreshwa kabla ya kupakiwa.",
+    "processingFailed": "Haikuwezekana kuchakata picha. Tafadhali jaribu picha nyingine."
+  },
+  "notifications": {
+    "tapHint": "Gusa hapa kuona arifa zako za hivi karibuni",
+    "title": "Arifa",
+    "yourArea": "Eneo lako",
+    "kmAway": "~km [km] kutoka hapa",
+    "emptyTitle": "Hakuna arifa zinazopatikana",
+    "emptyBody": "Umesoma zote. Rudi baadaye kuona mpya.",
+    "noWeatherTitle": "Bado hakuna arifa za hali ya hewa",
+    "noWeatherBody": "Ruhusu ufikiaji wa mahali ili kupakia arifa za hali ya hewa za eneo lako.",
+    "markAllRead": "Weka zote kuwa zimesomwa",
+    "pleaseNote": "Tafadhali kumbuka",
+    "feedbackThanksPositive": "Asante kwa maoni yako!",
+    "feedbackThanksNegative": "Asante, tutaboresha!",
+    "wasThisHelpful": "Je, hii ilisaidia?",
+    "yes": "Ndiyo",
+    "no": "Hapana",
+    "ariaSeen": "Imesomwa",
+    "ariaUnread": "Haijasomwa",
+    "ariaClose": "Funga",
+    "ariaHelpful": "Inasaidia",
+    "ariaNotHelpful": "Haisaidii"
+  },
+  "pestApi": {
+    "trigger": "Utambuzi wa Wadudu na Magonjwa",
+    "title": "Utambuzi wa Wadudu na Magonjwa",
+    "description": "Pakia picha ya zao ili kutambua wadudu au magonjwa yanayoathiri zao lako.",
+    "note": "Tumia picha iliyo wazi ya zao lililoathirika, jani, shina, tunda, au mdudu anayeonekana kwa matokeo bora.",
+    "photoLabel": "Picha ya Mmea/Mdudu",
+    "continue": "Endelea",
+    "submit": "Chambua na Tuma",
+    "cancel": "Ghairi"
+  }
+}

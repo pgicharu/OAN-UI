@@ -1,17 +1,9 @@
 import React, { createContext, useContext, useState, useCallback } from 'react';
-import hi from '../../translations/hi.json';
 import en from '../../translations/en.json';
-import bn from '../../translations/bn.json';
-import te from '../../translations/te.json';
-import mr from '../../translations/mr.json';
-import ta from '../../translations/ta.json';
-import gu from '../../translations/gu.json';
-import kn from '../../translations/kn.json';
-import ml from '../../translations/ml.json';
-import as_ from '../../translations/as.json';
+import sw from '../../translations/sw.json';
 import { DEFAULT_LANGUAGE } from './screens-component/chat-screen/config';
 
-type LanguageCode = 'hi' | 'en' | 'bn' | 'te' | 'mr' | 'ta' | 'gu' | 'kn' | 'ml' | 'as';
+type LanguageCode = 'en' | 'sw';
 
 interface LanguageContextType {
   language: LanguageCode;
@@ -23,14 +15,17 @@ interface TranslationObject {
   [key: string]: string | string[] | TranslationObject | Array<Record<string, unknown>>;
 }
 
-const translations: Record<LanguageCode, TranslationObject> = { hi, en, bn, te, mr, ta, gu, kn, ml, as: as_ };
+const translations: Record<LanguageCode, TranslationObject> = { en, sw };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<LanguageCode>(() => {
     const saved = localStorage.getItem('app_language');
-    return (saved as LanguageCode) || DEFAULT_LANGUAGE;
+    // Ignore codes left over from a previous language set (e.g. the Indian
+    // languages this app shipped with) so we never select a missing bundle.
+    if (saved && saved in translations) return saved as LanguageCode;
+    return DEFAULT_LANGUAGE;
   });
 
   const setLanguage = (lang: LanguageCode) => {

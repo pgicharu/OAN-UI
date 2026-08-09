@@ -17,7 +17,6 @@ import { useAuthStore } from "@/hooks/store/auth";
 import type { ToastType } from "@/components/screens-component/chat-screen/components/toast";
 import { environment } from "@/lib/config/environment";
 
-/* eslint-disable no-unused-vars */
 export type ApiNotification = {
 	notification_id: string;
 	type: string;
@@ -135,24 +134,24 @@ type ChatStore = {
 const quickActionSeeds: QuickAction[] = [
 	{
 		id: "1",
-		title: "What is the treatment for Mastitis in cow?",
+		title: "What is the treatment for mastitis in dairy cows?",
 		description: "",
 		icon: "cow",
-		prompt: "What is the treatment for Mastitis in cow?"
+		prompt: "What is the treatment for mastitis in dairy cows?"
 	},
 	{
 		id: "2",
-		title: "What is the today’s price of amaranth in APMC Mumbai?",
+		title: "What is today’s price of maize at Wakulima Market, Nairobi?",
 		description: "",
 		icon: "wheat",
-		prompt: "What is the today’s price of amaranth in APMC Mumbai?"
+		prompt: "What is today’s price of maize at Wakulima Market, Nairobi?"
 	},
 	{
 		id: "3",
-		title: "What is the ideal irrigation schedule for muskmelon?",
+		title: "What is the ideal irrigation schedule for tomatoes?",
 		description: "",
 		icon: "cloud",
-		prompt: "What is the ideal irrigation schedule for muskmelon?"
+		prompt: "What is the ideal irrigation schedule for tomatoes?"
 	}
 ];
 
@@ -322,7 +321,7 @@ export const useChatStore = create<ChatStore>((set, get) => ({
 		}
 
 		// Helper function to calculate distance between two coordinates using Haversine formula
-		const calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: number): number => {
+		const _calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: number): number => {
 			const R = 6371; // Radius of the Earth in kilometers
 			const dLat = (lat2 - lat1) * Math.PI / 180;
 			const dLon = (lon2 - lon1) * Math.PI / 180;
@@ -334,7 +333,7 @@ export const useChatStore = create<ChatStore>((set, get) => ({
 			return R * c; // Distance in kilometers
 		};
 
-		const dedupeByPmKisan = (rows: WeatherForecastMatch[]): WeatherForecastMatch[] => {
+		const _dedupeByPmKisan = (rows: WeatherForecastMatch[]): WeatherForecastMatch[] => {
 			const seen = new Set<number>();
 			const out: WeatherForecastMatch[] = [];
 			for (const x of rows) {
@@ -346,14 +345,16 @@ export const useChatStore = create<ChatStore>((set, get) => ({
 		};
 
 		/** PostGIS ST_DWithin-style: only points inside this radius count as “local”. */
-		const WITHIN_RADIUS_KM = 75;
-		const MAX_LOCAL_MATCHES = 10;
+		const _WITHIN_RADIUS_KM = 75;
+		const _MAX_LOCAL_MATCHES = 10;
 		/** When no rows fall inside WITHIN_RADIUS_KM (e.g. user south of dataset min lat ~17.2°N), return this many nearest rows (KNN). */
-		const FALLBACK_NEAREST_K = 8;
+		const _FALLBACK_NEAREST_K = 8;
 
 		// TODO: remove hardcoded test coordinates and restore geolocation
-		const latitude = 31.319416;
-		const longitude = 76.616630;
+		// Nairobi. Was 31.319416, 76.616630 (Punjab, India) — these are sent to
+		// the notifications API as lat/lon, so the stub has to be local.
+		const latitude = -1.286389;
+		const longitude = 36.817223;
 		console.log("=== User Location (TEST HARDCODED) ===");
 		console.log("Latitude:", latitude);
 		console.log("Longitude:", longitude);
@@ -541,7 +542,7 @@ export const useChatStore = create<ChatStore>((set, get) => ({
 			if (isRateLimitError) {
 				const limitMessage = t
 					? t("limitMessage")
-					: "Dear user, you have reached the allotted question limit for today. You may continue to explore the other features of the Bharat-VISTAAR app.";
+					: "Dear user, you have reached the allotted question limit for today. You may continue to explore the other features of the OAN app.";
 				set((state) => ({
 					messages: [...state.messages, makeAssistantMessage(limitMessage, true, true)]
 				}));
@@ -728,7 +729,7 @@ export const useChatStore = create<ChatStore>((set, get) => ({
 			if (isRateLimitError) {
 				const limitMessage = t
 					? t("limitMessage")
-					: "Dear user, you have reached the allotted question limit for today. You may continue to explore the other features of the Bharat-VISTAAR app.";
+					: "Dear user, you have reached the allotted question limit for today. You may continue to explore the other features of the OAN app.";
 				set((state) => ({
 					messages: [...state.messages, makeAssistantMessage(limitMessage, true, true)]
 				}));
@@ -925,13 +926,12 @@ export const useChatStore = create<ChatStore>((set, get) => ({
 
 				// Schemes category
 				if (category === "schemes") {
-					if (detail === "pm_kisan") return "money";
-					if (detail === "kisan_credit_card") return "card";
-					if (detail === "fasal_bima") return "insurance";
-					if (detail === "soil_health_card") return "document";
-					if (detail === "pmksy") return "document";
-					if (detail === "enam_platform") return "wheat";
-					if (detail === "seed_authentication") return "document";
+					if (detail === "fertiliser_subsidy") return "money";
+					if (detail === "crop_insurance") return "insurance";
+					if (detail === "soil_testing") return "soil";
+					if (detail === "kiamis") return "document";
+					if (detail === "nafis") return "document";
+					if (detail === "seed_certification") return "document";
 					if (detail === "agriculture_fund") return "bank";
 					if (detail === "coverage") return "insurance";
 					if (subcategory === "general") return "tractor";
@@ -965,11 +965,6 @@ export const useChatStore = create<ChatStore>((set, get) => ({
 				// Loan category
 				if (category === "loan") {
 					return "bank";
-				}
-
-				// Mandi / market price category
-				if (category === "mandi") {
-					return "wheat";
 				}
 
 				// Weather category
