@@ -56,14 +56,14 @@ export type FAQItem = {
 export const FAQ_DATA: FAQItem[] = [
 	{
 		id: "1",
-		question: "How can I get subsidy for farm machinery?",
-		answer: "Farmers can apply for machinery subsidy through the MahaDBT portal. Subsidy amount depends on machine type, farmer category, and scheme availability.",
+		question: "How can I get support for farm machinery?",
+		answer: "Farmers can apply for machinery support through their county agriculture office or the Agricultural Finance Corporation (AFC). The amount available depends on the machine type, the farmer category, and the programmes running at the time.",
 		image: "/faq-machinery.png"
 	},
 	{
 		id: "2",
 		question: "Why is my crop not growing properly?",
-		answer: "Proper crop growth depends on soil health, water quality, and appropriate fertilizer usage. We recommend testing your soil at the nearest government lab.",
+		answer: "Proper crop growth depends on soil health, water quality, and appropriate fertiliser usage. We recommend having your soil tested by KALRO or an accredited soil testing lab.",
 	}
 ];
 
