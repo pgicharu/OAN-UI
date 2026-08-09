@@ -294,6 +294,28 @@
     "imageFormatHint": "Only JPEG and PNG images are supported. The image will be optimized before upload.",
     "processingFailed": "Could not process the image. Please try another photo."
   },
+  "notifications": {
+    "tapHint": "Tap here to see your latest notifications",
+    "title": "Notifications",
+    "yourArea": "Your area",
+    "kmAway": "~[km] km away",
+    "emptyTitle": "No notifications available",
+    "emptyBody": "You're all caught up. Check back later for updates.",
+    "noWeatherTitle": "No weather notifications yet",
+    "noWeatherBody": "Allow location access to load weather alerts for your area.",
+    "markAllRead": "Mark all as read",
+    "pleaseNote": "Please note",
+    "feedbackThanksPositive": "Thanks for your feedback!",
+    "feedbackThanksNegative": "Thanks, we'll improve!",
+    "wasThisHelpful": "Was this helpful?",
+    "yes": "Yes",
+    "no": "No",
+    "ariaSeen": "Seen",
+    "ariaUnread": "Unread",
+    "ariaClose": "Close",
+    "ariaHelpful": "Helpful",
+    "ariaNotHelpful": "Not helpful"
+  },
   "pestApi": {
     "trigger": "Pest & Disease Detection",
     "title": "Pest & Disease Detection",

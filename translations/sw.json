@@ -294,6 +294,28 @@
     "imageFormatHint": "Picha za JPEG na PNG pekee ndizo zinazokubalika. Picha itaboreshwa kabla ya kupakiwa.",
     "processingFailed": "Haikuwezekana kuchakata picha. Tafadhali jaribu picha nyingine."
   },
+  "notifications": {
+    "tapHint": "Gusa hapa kuona arifa zako za hivi karibuni",
+    "title": "Arifa",
+    "yourArea": "Eneo lako",
+    "kmAway": "~km [km] kutoka hapa",
+    "emptyTitle": "Hakuna arifa zinazopatikana",
+    "emptyBody": "Umesoma zote. Rudi baadaye kuona mpya.",
+    "noWeatherTitle": "Bado hakuna arifa za hali ya hewa",
+    "noWeatherBody": "Ruhusu ufikiaji wa mahali ili kupakia arifa za hali ya hewa za eneo lako.",
+    "markAllRead": "Weka zote kuwa zimesomwa",
+    "pleaseNote": "Tafadhali kumbuka",
+    "feedbackThanksPositive": "Asante kwa maoni yako!",
+    "feedbackThanksNegative": "Asante, tutaboresha!",
+    "wasThisHelpful": "Je, hii ilisaidia?",
+    "yes": "Ndiyo",
+    "no": "Hapana",
+    "ariaSeen": "Imesomwa",
+    "ariaUnread": "Haijasomwa",
+    "ariaClose": "Funga",
+    "ariaHelpful": "Inasaidia",
+    "ariaNotHelpful": "Haisaidii"
+  },
   "pestApi": {
     "trigger": "Utambuzi wa Wadudu na Magonjwa",
     "title": "Utambuzi wa Wadudu na Magonjwa",
