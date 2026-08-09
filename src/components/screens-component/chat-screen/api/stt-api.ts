@@ -9,10 +9,10 @@ export async function transcribeAudio(blob: Blob): Promise<string> {
 	// Simulate success (90% success rate)
 	if (Math.random() > 0.1) {
 		const dummySentences = [
-			"What is the subsidy for a 45HP tractor in Maharashtra?",
-			"How to apply for the dairy farming scheme?",
-			"What are today's mandi prices for wheat in Nagpur?",
-			"Tell me about the PM-Kisan Samman Nidhi Yojana."
+			"What support is available for a 45HP tractor in Nakuru?",
+			"How do I apply for dairy farming support?",
+			"What are today's market prices for maize in Kitale?",
+			"Tell me about the government fertiliser subsidy programme."
 		];
 		const randomTranscribedText =
 			dummySentences[Math.floor(Math.random() * dummySentences.length)] || "";
