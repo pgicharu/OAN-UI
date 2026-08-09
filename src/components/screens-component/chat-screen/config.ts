@@ -5,7 +5,7 @@ const rootConfig = rootConfigData as any;
 // LANGUAGE CONFIGURATION
 // ============================================================================
 
-export type LanguageCode = "hi" | "en" | "bn" | "te" | "mr" | "ta" | "gu" | "kn" | "ml" | "as";
+export type LanguageCode = "en" | "sw";
 
 export type Language = {
 	code: LanguageCode;
@@ -19,7 +19,7 @@ export const LANGUAGES: Record<LanguageCode, Language> = rootConfig.languages.re
 	return acc;
 }, {} as Record<LanguageCode, Language>);
 
-export const DEFAULT_LANGUAGE: LanguageCode = rootConfig.defaultLanguage as LanguageCode || "hi";
+export const DEFAULT_LANGUAGE: LanguageCode = rootConfig.defaultLanguage as LanguageCode || "en";
 
 // ============================================================================
 // CHAT CONFIGURATION
