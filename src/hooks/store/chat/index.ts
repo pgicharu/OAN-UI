@@ -135,24 +135,24 @@ type ChatStore = {
 const quickActionSeeds: QuickAction[] = [
 	{
 		id: "1",
-		title: "What is the treatment for Mastitis in cow?",
+		title: "What is the treatment for mastitis in dairy cows?",
 		description: "",
 		icon: "cow",
-		prompt: "What is the treatment for Mastitis in cow?"
+		prompt: "What is the treatment for mastitis in dairy cows?"
 	},
 	{
 		id: "2",
-		title: "What is the today’s price of amaranth in APMC Mumbai?",
+		title: "What is today’s price of maize at Wakulima Market, Nairobi?",
 		description: "",
 		icon: "wheat",
-		prompt: "What is the today’s price of amaranth in APMC Mumbai?"
+		prompt: "What is today’s price of maize at Wakulima Market, Nairobi?"
 	},
 	{
 		id: "3",
-		title: "What is the ideal irrigation schedule for muskmelon?",
+		title: "What is the ideal irrigation schedule for tomatoes?",
 		description: "",
 		icon: "cloud",
-		prompt: "What is the ideal irrigation schedule for muskmelon?"
+		prompt: "What is the ideal irrigation schedule for tomatoes?"
 	}
 ];
 
@@ -925,13 +925,12 @@ export const useChatStore = create<ChatStore>((set, get) => ({
 
 				// Schemes category
 				if (category === "schemes") {
-					if (detail === "pm_kisan") return "money";
-					if (detail === "kisan_credit_card") return "card";
-					if (detail === "fasal_bima") return "insurance";
-					if (detail === "soil_health_card") return "document";
-					if (detail === "pmksy") return "document";
-					if (detail === "enam_platform") return "wheat";
-					if (detail === "seed_authentication") return "document";
+					if (detail === "fertiliser_subsidy") return "money";
+					if (detail === "crop_insurance") return "insurance";
+					if (detail === "soil_testing") return "soil";
+					if (detail === "kiamis") return "document";
+					if (detail === "nafis") return "document";
+					if (detail === "seed_certification") return "document";
 					if (detail === "agriculture_fund") return "bank";
 					if (detail === "coverage") return "insurance";
 					if (subcategory === "general") return "tractor";
@@ -965,11 +964,6 @@ export const useChatStore = create<ChatStore>((set, get) => ({
 				// Loan category
 				if (category === "loan") {
 					return "bank";
-				}
-
-				// Mandi / market price category
-				if (category === "mandi") {
-					return "wheat";
 				}
 
 				// Weather category
