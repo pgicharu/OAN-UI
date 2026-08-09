@@ -79,7 +79,7 @@ export type Theme = keyof typeof THEMES;
 // ============================================================================
 
 export const ICONS = {
-	language: "अ",
+	language: "A",
 	settings: "Settings",
 	bell: "Bell",
 	user: "User",
