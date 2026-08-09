@@ -38,6 +38,7 @@ export default defineConfig({
 		virtualRouteFileChangeReloadPlugin
 	],
 	server: {
+		allowedHosts: ['agrovets.oan.safic.org','localhost','seeker.oan.safic.org'],
 		port: 3004,
 		proxy: {
 			"/api": {

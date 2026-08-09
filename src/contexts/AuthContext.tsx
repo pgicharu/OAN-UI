@@ -77,13 +77,13 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   // Keep this in sync with bharat-oan-api/jwt_public_key.pem.
   const publicKeyPEM = `-----BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApkSzbo2t1fjW5TzK8rpx
-XvvORzIVHD4FVOH2GuoYjsIr1k0VSdH9exoHUp7RigGFdGCmNMD0pojxrAoCwsz6
-JN9PMi8OVijsghK3WHuF+SoXoVOr9NiT/TyHESRiOeunpzH2BdzDSUfpzKkKp+1y
-1DYo5EyCwhzHqWEluLiSeB2d4Q3VblAs6RIOMsexkjZUQSkffk0eJWalpYw0sFDF
-xknd93Q1j3qskklhpyZUr6qVfvV0KX9Z6gPZDpfxiZIQnJ4FJHmserHhw5EzlNKH
-49Oxs1wR72M1+v5vnGUrgDxfOqd3qzOBNTAPo8tFZXdK7fgPeUSNJkKBpw4/PvDP
-LwIDAQAB
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn0UNVbufSTS2CZN6RskV
+FdCYq3V1guwjpQO7xlatxz2ooOYimFlPcrmGyOmN7SOjdnbZkAGMlWzjKaZf1Aji
+jWBUYTjFTRFH34XmlC8GinUIF/UazZr4W7DGWZ6G0Ptww83xnF0Nv9qtzuFbr6M4
+TJpeqtECz+O+Mkq8i/Hx/4/N34CPgByn7JzH0CaQVZ5G8+GWXLRieXsa2Hgg6roc
+rn/hEGuPFuP0BYdbWoGFOB2pFJF641fJsQ35SIgajpGT1CymxNTjPJul/P36Xrci
+IWlQSEgG3Ylapd5So6GXmEtIfRg2/ufWK8OO1ShU0/8Y6KDnMtjTRvN1QBxhRWQE
+/wIDAQAB
 -----END PUBLIC KEY-----`;
 
   // Fetch new JWT token from /api/token and store it
