@@ -229,12 +229,12 @@
     },
     "rateLimitError": {
       "title": "Please Wait",
-      "description": "Dear user, you have reached the allotted question limit for today. You may continue to explore the other features of the Bharat-VISTAAR app."
+      "description": "Dear user, you have reached the allotted question limit for today. You may continue to explore the other features of the OAN app."
     }
   },
   "maintenance": {
     "title": "Under Maintenance",
-    "heading": "Bharat-VISTAAR",
+    "heading": "OAN",
     "subheading": "Under Maintenance",
     "message": "We're currently performing scheduled maintenance to improve your experience. We'll be back shortly.",
     "thankyou": "Thank you for your patience!",
@@ -253,7 +253,7 @@
     "darkMode": "Dark mode",
     "helpAndSupport": "Help & Support",
     "faq": "Frequently Asked Questions (FAQs)",
-    "poweredBy": "Powered by Bharat-VISTAAR"
+    "poweredBy": "Powered by OAN"
   },
   "feedback": {
     "title": "Provide Feedback",
@@ -270,7 +270,7 @@
       "other": "Other issue"
     }
   },
-  "limitMessage": "Dear user, you have reached the allotted question limit for today. You may continue to explore the other features of the Bharat-VISTAAR app.",
+  "limitMessage": "Dear user, you have reached the allotted question limit for today. You may continue to explore the other features of the OAN app.",
   "chatErrorMessage": "Sorry, there was an error processing your request. Please try again.",
   "auth": {
     "loginRequired": "Login required",
