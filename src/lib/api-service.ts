@@ -36,8 +36,14 @@ interface ImageUploadResponse {
   image_id: string;
 }
 
+export interface FarmerRegistryLoginResponse {
+  farmer_id: string;
+  farmer_token: string;
+}
+
 // Constants
 const JWT_STORAGE_KEY = 'auth_jwt';
+const FARMER_TOKEN_STORAGE_KEY = 'farmer_registry_token';
 
 const getTokenExpiryFromExp = (token: string): number | null => {
   try {
@@ -64,9 +70,11 @@ class ApiService {
   private axiosInstance: AxiosInstance;
   private authToken: string | null = null;
   private refreshTokenPromise: Promise<string | null> | null = null;
+  private farmerToken: string | null = null;
 
   constructor() {
     this.authToken = this.getAuthToken();
+    this.farmerToken = localStorage.getItem(FARMER_TOKEN_STORAGE_KEY);
     this.axiosInstance = axios.create({
       baseURL: this.apiUrl,
       headers: {
@@ -238,7 +246,8 @@ class ApiService {
         ...(this.locationData && {
           latitude: String(this.locationData.latitude),
           longitude: String(this.locationData.longitude)
-        })
+        }),
+        ...(this.farmerToken && { farmer_token: this.farmerToken })
       };
 
       const headers = this.getAuthHeaders();
@@ -531,6 +540,38 @@ class ApiService {
 
   getLocationData(): LocationData | null {
     return this.locationData;
+  }
+
+  getFarmerToken(): string | null {
+    return this.farmerToken;
+  }
+
+  clearFarmerToken(): void {
+    this.farmerToken = null;
+    localStorage.removeItem(FARMER_TOKEN_STORAGE_KEY);
+  }
+
+  /**
+   * Verifies the farmer's registry credentials via bharat-oan-api (never
+   * called against the registry directly — it holds a backend-only API key
+   * and has no CORS opened for this origin) and stores the returned
+   * farmer_token so it rides along on every subsequent chat request.
+   */
+  async loginFarmerRegistry(phone: string, password: string): Promise<FarmerRegistryLoginResponse> {
+    await this.refreshAuthTokenIfExpiredOrMissing();
+    if (!this.validateAuth()) {
+      throw new Error('Authentication error');
+    }
+
+    const response = await this.axiosInstance.post<FarmerRegistryLoginResponse>(
+      '/api/farmer-auth/login',
+      { phone, password },
+      { headers: this.getAuthHeaders() }
+    );
+
+    this.farmerToken = response.data.farmer_token;
+    localStorage.setItem(FARMER_TOKEN_STORAGE_KEY, this.farmerToken);
+    return response.data;
   }
 
   setSessionId(sessionId: string): void {
