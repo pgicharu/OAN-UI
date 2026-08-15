@@ -1,2 +1,2 @@
 // Put screen-specific components here
-export {};
+export { FarmerRegistryConnect } from './farmer-registry-connect';
